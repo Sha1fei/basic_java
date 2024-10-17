@@ -7,7 +7,10 @@ public class Threads {
         // 2 - спопосб задания потока
         Thread myThread_2 = new Thread(new RunnableThread());
         // 3 - спопосб задания потока
-        Thread myThread_3 = new Thread(() -> {Thread.currentThread().setName("LambdaThread");  System.out.println(Thread.currentThread().getName());});
+        Thread myThread_3 = new Thread(() -> {
+            Thread.currentThread().setName("LambdaThread");
+            System.out.println(Thread.currentThread().getName());
+        });
 
         myThread_1.start(); // новый поток
         myThread_1.join(); // заставить основной поток main дожидаться завершения выполения внутреннего потока myThread_1

@@ -17,7 +17,7 @@ public class DataTime {
         System.out.println("ZonedDateTime.isBefore: " + zonedDateTime.isBefore(zonedDateTime2));
         System.out.println("ZonedDateTime.isEqual: " + zonedDateTime.isEqual(zonedDateTime2));
         System.out.println("ZonedDateTime.plus: " + zonedDateTime.truncatedTo(ChronoUnit.DAYS));
-        System.out.println("LocalDateTime: " + LocalDateTime.of(2018,1,1,1,1));
+        System.out.println("LocalDateTime: " + LocalDateTime.of(2018, 1, 1, 1, 1));
         System.out.println("LocalDateTime.now: " + LocalDateTime.now(ZoneOffset.UTC)); // локкадьно время в UTC
         System.out.println("LocalDateTime.now: " + LocalDateTime.now());
         System.out.println("LocalDateTime.toLocalTime: " + LocalDateTime.now().toLocalTime());
@@ -27,10 +27,10 @@ public class DataTime {
         System.out.println("LocalDateTime.ZoneId: " + LocalDateTime.now().toInstant(ZoneId.of("America/Los_Angeles").getRules().getOffset(LocalDateTime.now())));
         System.out.println("LocalDateTime.ZoneId: " + LocalDateTime.now().toInstant(ZoneId.of("America/Los_Angeles").getRules().getOffset(LocalDateTime.now())));
         System.out.println("LocalDateTime.with: " + LocalDateTime.now().with(template -> template.plus(1L, ChronoUnit.DAYS)));
-        System.out.println("Period.between.days: " + Period.between(LocalDate.of(2018,1,1), LocalDate.now()).get(ChronoUnit.DAYS));
-        System.out.println("Period.between.month: " + Period.between(LocalDate.of(2018,1,1), LocalDate.now()).get(ChronoUnit.MONTHS));
-        System.out.println("Period.between.year: " + Period.between(LocalDate.of(2018,1,1), LocalDate.now()).get(ChronoUnit.YEARS));
-        System.out.println("ChronoUnit.between: " + ChronoUnit.DAYS.between(LocalDate.of(2018,1,1), LocalDate.now()));
+        System.out.println("Period.between.days: " + Period.between(LocalDate.of(2018, 1, 1), LocalDate.now()).get(ChronoUnit.DAYS));
+        System.out.println("Period.between.month: " + Period.between(LocalDate.of(2018, 1, 1), LocalDate.now()).get(ChronoUnit.MONTHS));
+        System.out.println("Period.between.year: " + Period.between(LocalDate.of(2018, 1, 1), LocalDate.now()).get(ChronoUnit.YEARS));
+        System.out.println("ChronoUnit.between: " + ChronoUnit.DAYS.between(LocalDate.of(2018, 1, 1), LocalDate.now()));
         System.out.println("Instant.atZone: " + Instant.now().atZone(ZoneId.of("America/Los_Angeles")));
 
 //        System.out.println("getMonth: " + zonedDateTime.format(Duration.ofDays()));

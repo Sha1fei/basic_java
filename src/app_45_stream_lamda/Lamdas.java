@@ -30,7 +30,7 @@ public class Lamdas {
         System.out.println(predicate.test(3));
 
         Consumer<Integer> consumer = o1 -> {  // input: any, return: void (похож на setter)
-            System.out.println( o1);
+            System.out.println(o1);
         };
         consumer.accept(5);
 

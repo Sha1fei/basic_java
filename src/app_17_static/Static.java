@@ -16,6 +16,7 @@ public class Static {
 
 class Test {
     public static int TEST_SECONDS = 100;
+
     public static void showSeconds() {
         System.out.println(Test.TEST_SECONDS);
     }

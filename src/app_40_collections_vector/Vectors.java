@@ -5,7 +5,7 @@ import java.util.Vector;
 public class Vectors {
     public static void main(String[] args) {
         Vector<Pet> vector = new Vector<>(); // старая версия ArrayList
-        Pet pet1 = new Pet(1,"Vaska");
+        Pet pet1 = new Pet(1, "Vaska");
         vector.add(pet1);
         Pet el = vector.get(0);
 

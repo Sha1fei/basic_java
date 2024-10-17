@@ -30,7 +30,7 @@ class Home {
         this.windows = windows;
     }
 
-    Home(){
+    Home() {
         System.out.println(" онструктор создалс€ без папраметров");
     }
 }

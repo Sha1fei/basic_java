@@ -135,7 +135,7 @@ public class Regular {
         String text_22 = "Valya";
         Pattern pattern_22 = Pattern.compile("(V)(?<code>a)ly\\2"); // \\2 дубликат того что на втором
         Matcher matcher_22 = pattern_22.matcher(text_22);
-        while(matcher_22.find()){
+        while (matcher_22.find()) {
             System.out.println("matcher_22: " + matcher_22.group(1));
             System.out.println("matcher_22: " + matcher_22.group("code"));
             System.out.println("matcher_22: " + matcher_22.group(2));
@@ -146,8 +146,8 @@ public class Regular {
         Pattern pattern_23 = Pattern.compile("(V)(a)l(ya)"); //
         Matcher matcher_23 = pattern_23.matcher(text_23);
         StringBuilder stringBuilder = new StringBuilder();
-        while(matcher_23.find()){
-           matcher_23.appendReplacement(stringBuilder, "$1$2n$3");
+        while (matcher_23.find()) {
+            matcher_23.appendReplacement(stringBuilder, "$1$2n$3");
         }
         System.out.println(stringBuilder);
 

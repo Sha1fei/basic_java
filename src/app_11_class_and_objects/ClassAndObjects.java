@@ -12,9 +12,9 @@ public class ClassAndObjects {
 
 class Computer {
     int ssd = 500;
-    int ram =  1024;
+    int ram = 1024;
 
-    void load (){
+    void load() {
         System.out.println("Computer loaded");
     }
 }

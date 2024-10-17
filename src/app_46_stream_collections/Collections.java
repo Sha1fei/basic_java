@@ -28,7 +28,7 @@ public class Collections {
         list2.stream().forEach(System.out::print); // forEach - терминальный метод
         System.out.println();
 
-        for (String s: list2) {
+        for (String s : list2) {
             System.out.print(s);
         }
 
@@ -44,11 +44,11 @@ public class Collections {
 class Pet {
     private String name;
 
-    public String getName() {
-        return name;
-    }
-
     public Pet(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

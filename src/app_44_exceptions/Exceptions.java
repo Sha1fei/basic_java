@@ -17,12 +17,13 @@ public class Exceptions {
 }
 
 class TestException {
-    public static void test(){
+    public static void test() {
         try { // первый вариант
             int a = 10;
             int b = 0;
             throw new RuntimeException("Exceptions"); // бросить ошибку
-        } catch (Throwable e) { // возможные варианты ощибок RuntimeException | ArithmeticException | IllegalArgumentException | FileNotFoundException | Exception
+        } catch (
+                Throwable e) { // возможные варианты ощибок RuntimeException | ArithmeticException | IllegalArgumentException | FileNotFoundException | Exception
             System.out.println(e.getMessage());
         } finally {
             System.out.println("finally");
@@ -30,13 +31,13 @@ class TestException {
         System.out.println("end");
     }
 
-    public static void test2 () throws RuntimeException{ // не требует проверки в вызываемом классе
+    public static void test2() throws RuntimeException { // не требует проверки в вызываемом классе
         int a = 10;
         int b = 0;
         throw new RuntimeException("RuntimeException");
     }
 
-    public static void test3 () throws FileNotFoundException { // требует проверки в вызываемом классе
+    public static void test3() throws FileNotFoundException { // требует проверки в вызываемом классе
         int a = 10;
         int b = 0;
         throw new FileNotFoundException("Exceptions");

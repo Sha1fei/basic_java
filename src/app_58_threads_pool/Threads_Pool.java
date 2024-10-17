@@ -11,21 +11,26 @@ public class Threads_Pool {
     // чтобы они выполнялись по мере освобождения потока
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService threadPool1 =Executors.newSingleThreadExecutor(); // пулл из одного потока
+        ExecutorService threadPool1 = Executors.newSingleThreadExecutor(); // пулл из одного потока
         ExecutorService threadPool2 = Executors.newFixedThreadPool(5); // пулл с указанием колличества
         Executors.newCachedThreadPool(); // пулл безграничный - столько потоков сколько их таксов отправлено (но не будет их увеличивать если ипотоков хватает)
-        ScheduledExecutorService threadPool3 =  Executors.newScheduledThreadPool(3); // по расписанию запуск
-        ScheduledExecutorService threadPool4 =  Executors.newScheduledThreadPool(3); // по расписанию запуск
+        ScheduledExecutorService threadPool3 = Executors.newScheduledThreadPool(3); // по расписанию запуск
+        ScheduledExecutorService threadPool4 = Executors.newScheduledThreadPool(3); // по расписанию запуск
         Executors.newWorkStealingPool(); // сосзадет пулл на основании доступных колличство процессоров Runtime.getRuntime().availableProcessors;
 
-        Future<Integer> future = threadPool1.submit(() -> { return 1;} );
+        Future<Integer> future = threadPool1.submit(() -> {
+            return 1;
+        });
         System.out.println(future.get()); // блочит поток вызвавщие его
 
-        CompletableFuture<Integer> completableFuture = CompletableFuture.supplyAsync(() -> { return 2;}); // аналог future, но не нужен поток, т.к. использует деволтный (хотя его и можно передать в параметр)
-        CompletableFuture<Integer> completableFuture2 = CompletableFuture.supplyAsync(() -> { return 3;}, threadPool2);
+        CompletableFuture<Integer> completableFuture = CompletableFuture.supplyAsync(() -> {
+            return 2;
+        }); // аналог future, но не нужен поток, т.к. использует деволтный (хотя его и можно передать в параметр)
+        CompletableFuture<Integer> completableFuture2 = CompletableFuture.supplyAsync(() -> {
+            return 3;
+        }, threadPool2);
         System.out.println(completableFuture.get());
         System.out.println(completableFuture2.get());
-
 
 
         threadPool3.schedule(() -> System.out.println("4"), 3, TimeUnit.SECONDS); // запуск с задержкой
@@ -54,8 +59,8 @@ public class Threads_Pool {
 class CustomThreadPool extends Thread {
     private final Queue<Runnable> tasks;
 
-    public CustomThreadPool(Queue<Runnable> tasks){
-        this.tasks  = tasks;
+    public CustomThreadPool(Queue<Runnable> tasks) {
+        this.tasks = tasks;
     }
 
     @Override
@@ -63,7 +68,7 @@ class CustomThreadPool extends Thread {
         while (true) {
             Optional<Runnable> task = Optional.empty();
             synchronized (tasks) {
-                if(!tasks.isEmpty()){
+                if (!tasks.isEmpty()) {
                     task = Optional.of(tasks.poll());
                 }
             }

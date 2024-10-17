@@ -1,6 +1,5 @@
 package app_35_collections_linkedhashset;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -8,16 +7,16 @@ import java.util.Set;
 public class LinkedHashSets {
     public static void main(String[] args) {
         Set<Pet> linkedHashSet = new LinkedHashSet<>(); // ѕор€док при итерации по map не гарантируетс€
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
-        Pet pet4 = new Pet(4,"Korzhik");
+        Pet pet4 = new Pet(4, "Korzhik");
         linkedHashSet.add(pet1);
         linkedHashSet.add(pet2);
         linkedHashSet.add(pet3);
         linkedHashSet.add(pet4);
 
-        for (Pet pet: linkedHashSet) {
+        for (Pet pet : linkedHashSet) {
             System.out.print(pet + " ");
         }
         System.out.println();

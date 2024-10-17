@@ -7,18 +7,18 @@ public class Arrays {
         a_1[0] = 1;
 
         System.out.println("a_1[0]: " + a_1[0]);
-        System.out.println("a_2[2]: " +  a_2[2]);
+        System.out.println("a_2[2]: " + a_2[2]);
         System.out.println("a_2.length: " + a_2.length);
 
-        int[][] a_3 = {{1,2}, null, new int[4], {7,8}};
-        System.out.println("a_1[3][1]: " +a_3[3][1]);
+        int[][] a_3 = {{1, 2}, null, new int[4], {7, 8}};
+        System.out.println("a_1[3][1]: " + a_3[3][1]);
         System.out.println("a_3[1]: " + a_3[1]);
 
-        for(int item: a_2){
+        for (int item : a_2) {
             System.out.print(item + " ");
         }
         System.out.println();
-        for(int i = 0; i < a_2.length; i++){
+        for (int i = 0; i < a_2.length; i++) {
             System.out.print(a_2[i] + " ");
         }
     }

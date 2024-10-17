@@ -16,7 +16,7 @@ public class LinkedHashMaps {
         linkedHashMap.put(person2.getId(), person2);
         linkedHashMap.put(person3.getId(), person3);
 
-        for(Map.Entry<Integer, Person> person: linkedHashMap.entrySet()){
+        for (Map.Entry<Integer, Person> person : linkedHashMap.entrySet()) {
             System.out.print(person + " ");
         }
         System.out.println();

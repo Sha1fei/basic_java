@@ -4,7 +4,7 @@ public class Switch {
     public static void main(String[] args) {
         // byte, short, int, char, String, enum
         int month = 3;
-        switch (month){
+        switch (month) {
             case 1:
                 System.out.println("January");
                 break;
@@ -46,7 +46,7 @@ public class Switch {
                 break;
         }
 
-        var result = switch (month){
+        var result = switch (month) {
             case 12, 1, 2 -> "Winter";
             case 3, 4, 5 -> "Spring";
             case 6, 7, 8 -> "Summer";
@@ -54,7 +54,6 @@ public class Switch {
             default -> "Invalid month";
         };
         System.out.println(result);
-
 
 
     }

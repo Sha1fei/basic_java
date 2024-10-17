@@ -23,20 +23,20 @@ public class Sorting {
 
 
         List<Pet> arrayList3 = new ArrayList<>();
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
-        Pet pet4 = new Pet(4,"Korzhik");
+        Pet pet4 = new Pet(4, "Korzhik");
         arrayList3.add(pet1);
         arrayList3.add(pet2);
         arrayList3.add(pet3);
         arrayList3.add(pet4);
 
         List<Pet> arrayList4 = new ArrayList<>();
-        Pet pet5 = new Pet(1,"Vaska");
-        Pet pet6 = new Pet(3,"Tuzik");
+        Pet pet5 = new Pet(1, "Vaska");
+        Pet pet6 = new Pet(3, "Tuzik");
         Pet pet7 = new Pet(2, "Bulka");
-        Pet pet8 = new Pet(4,"Korzhik");
+        Pet pet8 = new Pet(4, "Korzhik");
         arrayList4.add(pet5);
         arrayList4.add(pet6);
         arrayList4.add(pet7);

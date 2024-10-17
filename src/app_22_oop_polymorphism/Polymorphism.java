@@ -13,27 +13,32 @@ public class Polymorphism {
     }
 }
 
-abstract class Animal{
+abstract class Animal {
     String name;
-    public String getName(){
-        return name;
-    };
-    public abstract void setName(String name);
 
-//    public static void showAnimals(Animal[] animals) {
+    //    public static void showAnimals(Animal[] animals) {
 //        for(Animal animal : animals){
 //            System.out.println(animal.getName());
 //        }
 //    };
     public static void showAnimals(Animal... animals) {
-        for(Animal animal : animals){
-            if(animal instanceof Cat){ // проверка на пренадлежность классу
+        for (Animal animal : animals) {
+            if (animal instanceof Cat) { // проверка на пренадлежность классу
                 ((Cat) animal).setName("Cat: " + animal.name + "2"); // кастинг класса для инстанса
             }
             System.out.println(animal.getName());
         }
-    };
+    }
 
+    ;
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract void setName(String name);
+
+    ;
 
 
 }

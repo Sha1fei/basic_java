@@ -3,6 +3,9 @@ package app_16_compositions;
 public class Ssd {
     public int size;
 
+    public Ssd() {
+    }
+
     public int getSize() {
         return size;
     }
@@ -10,6 +13,4 @@ public class Ssd {
     public void setSize(int size) {
         this.size = size;
     }
-
-    public Ssd() {}
 }

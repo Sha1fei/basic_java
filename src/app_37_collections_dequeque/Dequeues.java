@@ -8,8 +8,8 @@ public class Dequeues {
     public static void main(String[] args) {
         Deque<Pet> deque = new ArrayDeque<>(); // двусторон€€ очередь stack + queue
 
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
 
         deque.addFirst(pet1);
         deque.addLast(pet2);

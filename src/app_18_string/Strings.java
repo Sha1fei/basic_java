@@ -1,7 +1,5 @@
 package app_18_string;
 
-import java.util.Locale;
-
 public class Strings {
     public static void main(String[] args) {
         var s1 = new String(new char[]{'1', '2', '3'});
@@ -52,7 +50,7 @@ public class Strings {
         var s16 = s1.lines(); // возращает стримы строк
         System.out.println(s16);
 
-        var s17 = s13.matches("(.*)" +  s1 +  "(.*)"); // возращает стримы строк
+        var s17 = s13.matches("(.*)" + s1 + "(.*)"); // возращает стримы строк
         System.out.println(s17);
 
         var s18 = s13.replace('1', '9');

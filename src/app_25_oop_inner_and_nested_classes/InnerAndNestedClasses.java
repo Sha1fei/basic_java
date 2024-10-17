@@ -19,9 +19,9 @@ public class InnerAndNestedClasses {
 
     }
 
-    void handlerMethod(){
+    void handlerMethod() {
         class NestedClass2 {
-            void testInner()  {
+            void testInner() {
                 System.out.println("run Nested Class");
             }
         }
@@ -31,14 +31,14 @@ public class InnerAndNestedClasses {
     }
 
     static class InnerClass2 {
-        void testInner2()  {
+        void testInner2() {
             System.out.println("run Nested Class2");
         }
     }
 
 
     class InnerClass {
-        void testInner()  {
+        void testInner() {
             System.out.println("run Inner Class: " + InnerAndNestedClasses.this.value);
         }
     }

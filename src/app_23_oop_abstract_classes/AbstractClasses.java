@@ -8,15 +8,19 @@ public class AbstractClasses {
     }
 }
 
-abstract class Animal{
+abstract class Animal {
     String name;
-    public String getName(){
+
+    public String getName() {
         return name;
-    };
+    }
+
+    ;
+
     public abstract String setName(String name);
 }
 
-class Cat extends Animal{
+class Cat extends Animal {
 
     @Override
     public String setName(String name) {

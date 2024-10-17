@@ -1,18 +1,18 @@
 package app_59_threads_collections;
 
 import java.util.Comparator;
-import java.util.stream.Stream;
 import java.util.concurrent.*;
+import java.util.stream.Stream;
 
 public class Threads_Collections {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ArrayBlockingQueue<Integer> blockingDeque =  new ArrayBlockingQueue<>(16);
-        ConcurrentHashMap<String, Integer> concurrentMap =  new ConcurrentHashMap<>();
+        ArrayBlockingQueue<Integer> blockingDeque = new ArrayBlockingQueue<>(16);
+        ConcurrentHashMap<String, Integer> concurrentMap = new ConcurrentHashMap<>();
         Comparator<Integer> comparator = Integer::compare;
         Comparator<String> comparator_2 = new StringComparator();
-        ConcurrentSkipListMap<String, Integer> concurrentNavigableMap =  new ConcurrentSkipListMap<>(comparator_2); // аналог treemap в коллекциях
-        ConcurrentSkipListSet<Integer> concurrentSkipListSet =  new ConcurrentSkipListSet<>(comparator);
+        ConcurrentSkipListMap<String, Integer> concurrentNavigableMap = new ConcurrentSkipListMap<>(comparator_2); // аналог treemap в коллекциях
+        ConcurrentSkipListSet<Integer> concurrentSkipListSet = new ConcurrentSkipListSet<>(comparator);
 
         ExecutorService threadPool1 = Executors.newFixedThreadPool(5);
         Future<?> task = threadPool1.submit(() -> {
@@ -54,11 +54,11 @@ public class Threads_Collections {
 class StringComparator implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
-        if(o1.length() > o2.length()){
+        if (o1.length() > o2.length()) {
             return 1;
-        } else if(o1.length() < o2.length()){
+        } else if (o1.length() < o2.length()) {
             return -1;
-        } else if(o1.length() == o2.length()) {
+        } else if (o1.length() == o2.length()) {
             return o1.compareTo(o2);
         }
         return 0;

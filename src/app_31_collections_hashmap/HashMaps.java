@@ -7,17 +7,17 @@ import java.util.Objects;
 public class HashMaps {
     public static void main(String[] args) {
         Map<Integer, Pet> hashMap = new HashMap<>(); // ѕор€док при итерации по map не гарантируетс€
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
-        Pet pet4 = new Pet(4,"Korzhik");
+        Pet pet4 = new Pet(4, "Korzhik");
         hashMap.put(pet1.getId(), pet1);
         hashMap.put(pet2.getId(), pet2);
         hashMap.put(pet3.getId(), pet3);
         hashMap.put(pet4.getId(), pet4);
 
 
-        for (Map.Entry<Integer, Pet> pet: hashMap.entrySet()) {
+        for (Map.Entry<Integer, Pet> pet : hashMap.entrySet()) {
             System.out.print(pet + " ");
         }
         System.out.println();

@@ -20,7 +20,13 @@ public class Threads_Concurrent_Lock {
 }
 
 class Account {
+    private final Lock lock = new ReentrantLock();
     private int id;
+    private int money = 0;
+
+    public Account(int id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
@@ -30,14 +36,8 @@ class Account {
                 '}';
     }
 
-    private int money = 0;
     public void add() {
         money = money + 100;
-    }
-    private final Lock lock = new ReentrantLock();
-
-    public Account(int id) {
-        this.id = id;
     }
 
     public Lock getLock() {
@@ -46,30 +46,29 @@ class Account {
 }
 
 class AccountRunnable implements Runnable {
+    Account account_1;
+    Account account_2;
     public AccountRunnable(Account account_1, Account account_2) {
         this.account_1 = account_1;
         this.account_2 = account_2;
     }
 
-    Account account_1;
-    Account account_2;
-
     @Override
     public void run() {
-        while(true){
+        while (true) {
             boolean success_account_1 = account_1.getLock().tryLock();
             boolean success_account_2 = account_2.getLock().tryLock();
-            if(success_account_1 && success_account_2){
-                System.out.println(Thread.currentThread().getName() +  ": account_1 and account_2 unlocked");
+            if (success_account_1 && success_account_2) {
+                System.out.println(Thread.currentThread().getName() + ": account_1 and account_2 unlocked");
                 break;
             }
-            if(success_account_1){
+            if (success_account_1) {
                 account_1.getLock().unlock();
-                System.out.println(Thread.currentThread().getName() +  ": account_1 locked");
+                System.out.println(Thread.currentThread().getName() + ": account_1 locked");
             }
-            if(success_account_2){
+            if (success_account_2) {
                 account_2.getLock().unlock();
-                System.out.println(Thread.currentThread().getName() +  ": account_2 locked");
+                System.out.println(Thread.currentThread().getName() + ": account_2 locked");
             }
         }
         for (int i = 0; i < 10; i++) {

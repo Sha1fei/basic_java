@@ -10,6 +10,6 @@ public class Computer {
     }
 
     public void show() {
-        System.out.println("Computer params: " + ram.getSize()+ " -ram " + ssd.getSize() + " -ssd " );
+        System.out.println("Computer params: " + ram.getSize() + " -ram " + ssd.getSize() + " -ssd ");
     }
 }

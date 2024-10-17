@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Stacks {
     public static void main(String[] args) {
         Stack<Pet> stack = new Stack<>(); // утсарелая верси dequeue
-        Pet pet1 = new Pet(1,"Vaska");
+        Pet pet1 = new Pet(1, "Vaska");
         stack.push(pet1);
         Pet el = stack.pop();
         System.out.println(el);
@@ -13,6 +13,7 @@ public class Stacks {
 
     }
 }
+
 class Pet {
     private Integer id;
     private String name;

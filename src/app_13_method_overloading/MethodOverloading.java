@@ -16,23 +16,23 @@ class Home {
     int windows;
     long doors;
 
-    String build(){
+    String build() {
         return "Дом построен";
     }
 
-    String build(int windows){
+    String build(int windows) {
         return "Дом 2 построен";
     }
 
-    String build(int windows, long doors){
+    String build(int windows, long doors) {
         return "Дом 3 построен";
     }
 
-    String build(long doors, int windows){
+    String build(long doors, int windows) {
         return "Дом 4 построен";
     }
 
-    String build(long doors){
+    String build(long doors) {
         return "Дом 5 построен";
     }
 }

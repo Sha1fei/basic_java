@@ -9,14 +9,16 @@ public class Serialization {
         serializeObject(path);
         deserializeObject(path);
     }
-    public static void serializeObject (Path path) throws IOException {
-        try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(path.toFile()))){
+
+    public static void serializeObject(Path path) throws IOException {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(path.toFile()))) {
             Person person = new Person("Vaska", 18);
             objectOutputStream.writeObject(person);
         }
     }
-    public static void deserializeObject (Path path) throws IOException, ClassNotFoundException {
-        try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(path.toFile()))){
+
+    public static void deserializeObject(Path path) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(path.toFile()))) {
             Person person = (Person) objectInputStream.readObject();
             System.out.println(person);
         }

@@ -8,7 +8,7 @@ public class PrimitiveDataTypes {
         long a_4 = 15L;
 
         double b_1 = 14.2;
-        float b_2= 15.3F;
+        float b_2 = 15.3F;
 
         char c_1 = 't';
 

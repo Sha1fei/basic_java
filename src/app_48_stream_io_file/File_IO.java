@@ -3,7 +3,6 @@ package app_48_stream_io_file;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 
 public class File_IO {
     public static void main(String[] args) throws IOException {

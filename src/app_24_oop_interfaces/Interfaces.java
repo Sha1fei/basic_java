@@ -6,7 +6,8 @@ public class Interfaces implements Test { // интерфейсы в отличии от абсткратных
         custom_interface.test2();
         custom_interface.test5();
     }
-    public void test5(){
+
+    public void test5() {
         System.out.println("run test5");
     }
 }

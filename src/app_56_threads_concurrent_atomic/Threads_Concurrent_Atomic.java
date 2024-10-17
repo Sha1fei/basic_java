@@ -13,9 +13,9 @@ public class Threads_Concurrent_Atomic {
         AtomicReferenceArray StringArray = new AtomicReferenceArray(new String[10]);
         Thread thread_1 = new Thread(() -> {
             int value = count.get();
-            while(value < 10){
-                intArray.set(value , value );
-                StringArray.set(value , new String("" +value ));
+            while (value < 10) {
+                intArray.set(value, value);
+                StringArray.set(value, new String("" + value));
                 bool.set(false);
                 value = count.incrementAndGet();
             }
@@ -27,7 +27,7 @@ public class Threads_Concurrent_Atomic {
         });
         Thread thread_2 = new Thread(() -> {
             int value = count.get();
-            while(value < 10){
+            while (value < 10) {
                 intArray.set(value, value);
                 StringArray.set(value, new String("" + value));
                 bool.set(false);

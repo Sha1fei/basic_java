@@ -15,7 +15,7 @@ class Computer {
         this.ram = ram;
     }
 
-    public int showDoubleRam () {
+    public int showDoubleRam() {
         return ram * ram;
     }
 }

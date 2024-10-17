@@ -31,7 +31,8 @@ public class Reflection {
         Method methodSet = reflection_test.getDeclaredMethod("setName", String.class);
         Method methodGet = reflection_test.getDeclaredMethod("getName");
         methodSet.invoke(instance, "Valentin");
-        System.out.println(methodGet.invoke(instance));methodGet.invoke(instance);
+        System.out.println(methodGet.invoke(instance));
+        methodGet.invoke(instance);
         System.out.println();
 
         Field[] fields = instance.getClass().getDeclaredFields();
@@ -51,15 +52,18 @@ public class Reflection {
 class Reflection_Test {
     @CustomAnnotation()
     private String name;
+
+    public Reflection_Test(String name) {
+        this.name = name;
+    }
+
     @CustomAnnotation()
     public String getName() {
         return name;
     }
+
     @CustomAnnotation()
     public void setName(String name) {
-        this.name = name;
-    }
-    public Reflection_Test(String name) {
         this.name = name;
     }
 

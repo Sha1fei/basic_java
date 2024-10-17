@@ -1,6 +1,9 @@
 package app_27_oop_generics;
 
-import app_18_string.Strings;
+interface Animal_Kingdom<T> {
+    public T getAnimalInfo(T animal); // дженерики в интерфейсах не используются со статическими переменными например T type = "Kingdom"; но это работает в класса
+
+}
 
 public class Generics {
     public static void main(String[] args) {
@@ -10,29 +13,24 @@ public class Generics {
     }
 }
 
+class Animal<T extends Animal_Type> implements Animal_Kingdom<T> {
 
-class Animal<T extends Animal_Type> implements Animal_Kingdom<T>{
-
-    public T getAnimalInfo(T animal){
+    public T getAnimalInfo(T animal) {
         System.out.println("Animal type: " + animal.animal_type + ", Animal class:" + animal.animal_class);
         return animal;
     }
 }
 
 class Animal_Type<T extends String> extends Animal_Class<T> {
+    T animal_type;
+
     public Animal_Type(T animal_type, T animal_class) {
         this.animal_type = animal_type;
         this.animal_class = animal_class;
     }
-    T animal_type;
 }
 
 class Animal_Class<T> {
     T animal_class;
-}
-
-interface Animal_Kingdom<T> {
-    public T getAnimalInfo(T animal); // дженерики в интерфейсах не используются со статическими переменными например T type = "Kingdom"; но это работает в класса
-
 }
 

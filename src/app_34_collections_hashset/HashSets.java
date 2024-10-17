@@ -1,23 +1,22 @@
 package app_34_collections_hashset;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
 public class HashSets {
     public static void main(String[] args) {
         Set<Pet> hashSet = new HashSet<>(); // ѕор€док при итерации по map не гарантируетс€
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
-        Pet pet4 = new Pet(4,"Korzhik");
+        Pet pet4 = new Pet(4, "Korzhik");
         hashSet.add(pet1);
         hashSet.add(pet2);
         hashSet.add(pet3);
         hashSet.add(pet4);
 
-        for (Pet pet: hashSet) {
+        for (Pet pet : hashSet) {
             System.out.print(pet + " ");
         }
         System.out.println();

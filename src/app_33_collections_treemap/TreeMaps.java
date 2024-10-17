@@ -1,17 +1,19 @@
 package app_33_collections_treemap;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Objects;
+import java.util.TreeMap;
 
 public class TreeMaps {
     public static void main(String[] args) {
         Map<Integer, Pet> treeMap = new TreeMap<>(); // строит красно бело дерево
 
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
-        Pet pet4 = new Pet(4,"Korzhik");
-        Pet pet5 = new Pet(5,"Laska");
-        Pet pet6 = new Pet(6,"Ghorik");
+        Pet pet4 = new Pet(4, "Korzhik");
+        Pet pet5 = new Pet(5, "Laska");
+        Pet pet6 = new Pet(6, "Ghorik");
 
         treeMap.put(pet1.getId(), pet1);
         treeMap.put(pet2.getId(), pet2);
@@ -20,7 +22,7 @@ public class TreeMaps {
         treeMap.put(pet5.getId(), pet5);
         treeMap.put(pet6.getId(), pet6);
 
-        for(Map.Entry<Integer, Pet> pet: treeMap.entrySet()){
+        for (Map.Entry<Integer, Pet> pet : treeMap.entrySet()) {
             System.out.print(pet + " ");
         }
         System.out.println();

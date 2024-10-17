@@ -1,19 +1,21 @@
 package app_36_collections_treeset;
 
 
-import java.util.*;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class TreeSets {
     public static void main(String[] args) {
 
         Set<Pet> treeSet = new TreeSet<>(); // строит красно бело дерево
 
-        Pet pet1 = new Pet(1,"Vaska");
-        Pet pet2 = new Pet(3,"Tuzik");
+        Pet pet1 = new Pet(1, "Vaska");
+        Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
-        Pet pet4 = new Pet(4,"Korzhik");
-        Pet pet5 = new Pet(5,"Laska");
-        Pet pet6 = new Pet(6,"Ghorik");
+        Pet pet4 = new Pet(4, "Korzhik");
+        Pet pet5 = new Pet(5, "Laska");
+        Pet pet6 = new Pet(6, "Ghorik");
 
         treeSet.add(pet1);
         treeSet.add(pet2);
@@ -22,7 +24,7 @@ public class TreeSets {
         treeSet.add(pet5);
         treeSet.add(pet6);
 
-        for(Pet pet: treeSet){
+        for (Pet pet : treeSet) {
             System.out.print(pet + " ");
         }
         System.out.println();

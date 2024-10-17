@@ -2,7 +2,7 @@ package app_15_packages_and_imports;
 
 import app_15_packages_and_imports.test_a.TestA;
 import app_15_packages_and_imports.test_a.test_b.TestB;
-import app_15_packages_and_imports.test_a.test_b.*;
+import app_15_packages_and_imports.test_a.test_b.TestC;
 
 public class PackagesAndImports {
     public static void main(String[] args) {
