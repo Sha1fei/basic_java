@@ -10,6 +10,6 @@ public class Variables {
         a += 5;
         a++;
         a--;
-        System.out.println(a / (double) 4); // (double) - явное приведение операнда к double
+        System.out.println(a / (double) 4); // (double) - явное привдение операнда к double
     }
 }
