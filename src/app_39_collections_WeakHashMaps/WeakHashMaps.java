@@ -8,6 +8,7 @@ public class WeakHashMaps {
 
         Pet pet1 = new Pet(1, "Vaska");
         weakHashMap.put(pet1.getId(), pet1); // см. hashMap
+        System.out.println(weakHashMap.get(pet1.getId()));
     }
 }
 
