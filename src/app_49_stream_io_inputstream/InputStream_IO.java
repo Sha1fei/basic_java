@@ -7,6 +7,13 @@ import java.util.Scanner;
 
 public class InputStream_IO {
     public static void main(String[] args) throws IOException { // inputstream предназначен для работы с любым потоком байт
+        Scanner console = new Scanner(System.in); // System.in - ввод данных по символьно
+        String name = console.nextLine(); // считывание строки из консоли
+        int age = console.nextInt(); // считывание строки из консоли
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+
         File file = Path.of("src", "app_49_stream_io_inputstream", "resources", "test.txt").toFile();
         Path file_2 = Path.of("src", "app_49_stream_io_inputstream", "resources", "test.txt");
         try (
