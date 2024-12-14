@@ -10,6 +10,7 @@ public class Variables {
         a += 5;
         a++;
         a--;
+        var systemVariables = System.getProperties(); //add to VMOptions -Dtest=test, add properties to arg1, arg2
         System.out.println(a / (double) 4); // (double) - явное привдение операнда к double
     }
 }
