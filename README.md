@@ -82,6 +82,7 @@
 - **[app_60_threads_latches](src/app_60_threads_latches/Threads_Latches.java)** - Синхронизаторы (Latches)
 - **[app_61_regular](src/app_61_regular/Regular.java)** - Регулярные выражения
 - **[app_62_reflection](src/app_62_reflection/Reflection.java)** - Рефлексия
+- **[app_63_records](src/app_63_records/Records.java)** - Records (Java 16+) — неизменяемые классы-носители данных
 
 ## 🚀 Запуск проекта
 
