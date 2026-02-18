@@ -179,5 +179,150 @@ public class IfElse {
         // Вложенный тернарный оператор (не рекомендуется для сложной логики)
         String status = (age >= 18) ? "Взрослый" : (age >= 13) ? "Подросток" : "Ребенок";
         System.out.println("age = " + age + " → status = " + status);
+        
+        // ============================================
+        // ПРОВЕРКА НА NULL
+        // ============================================
+        System.out.println("\n--- ПРОВЕРКА НА NULL ---");
+        
+        // Демонстрация проверки на null
+        // В реальном коде значение может приходить из методов, аргументов и т.д.
+        String text = getTextValue(); // Может вернуть null или строку
+        
+        // Важно проверять на null перед использованием
+        if (text != null) {
+            System.out.println("Длина строки: " + text.length());
+        } else {
+            System.out.println("Строка равна null, нельзя вызывать методы");
+        }
+        
+        // Безопасная проверка с использованием тернарного оператора
+        String safeText = (text != null) ? text : "Значение по умолчанию";
+        System.out.println("Безопасное значение: " + safeText);
+        
+        // Современный способ (Java 7+): Objects.requireNonNull
+        // if (text == null) throw new NullPointerException("text не может быть null");
+        
+        // ============================================
+        // УСЛОВИЯ С МЕТОДАМИ
+        // ============================================
+        System.out.println("\n--- УСЛОВИЯ С МЕТОДАМИ ---");
+        
+        String email = "user@example.com";
+        System.out.println("email = \"" + email + "\"");
+        
+        // Использование методов в условиях
+        if (email != null && email.contains("@") && email.length() > 5) {
+            System.out.println("Email выглядит валидным");
+        } else {
+            System.out.println("Email невалиден");
+        }
+        
+        // Проверка с помощью методов строки
+        String name = "Java";
+        if (name != null && !name.isEmpty() && name.startsWith("J")) {
+            System.out.println("Имя начинается с 'J': " + name);
+        }
+        
+        // ============================================
+        // ПАТТЕРН РАННЕГО ВОЗВРАТА (Early Return)
+        // ============================================
+        System.out.println("\n--- ПАТТЕРН РАННЕГО ВОЗВРАТА ---");
+        
+        // Демонстрация паттерна раннего возврата через вложенные условия
+        System.out.println("Проверка доступа к системе:");
+        boolean isAuthenticated = true;
+        boolean hasPermission = true;
+        boolean isActive = true;
+        
+        if (!isAuthenticated) {
+            System.out.println("  Ошибка: пользователь не аутентифицирован");
+        } else if (!hasPermission) {
+            System.out.println("  Ошибка: недостаточно прав");
+        } else if (!isActive) {
+            System.out.println("  Ошибка: учетная запись неактивна");
+        } else {
+            System.out.println("  Успех: доступ разрешен");
+        }
+        
+        // ============================================
+        // КОРОТКОЕ ЗАМЫКАНИЕ В УСЛОВИЯХ
+        // ============================================
+        System.out.println("\n--- КОРОТКОЕ ЗАМЫКАНИЕ В УСЛОВИЯХ ---");
+        
+        // Демонстрация короткого замыкания
+        // В реальном коде значение может приходить из разных источников
+        String data = getDataValue(); // Может вернуть null или строку
+        System.out.println("data = " + data);
+        
+        // Благодаря короткому замыканию, если первое условие false,
+        // второе условие не проверяется (избегаем NullPointerException)
+        if (data != null && data.length() > 0) {
+            System.out.println("Данные не пустые");
+        } else {
+            System.out.println("Данные пустые или null (безопасная проверка)");
+        }
+        
+        // Важно: порядок условий имеет значение!
+        // Неправильно: if (data.length() > 0 && data != null) - вызовет NullPointerException
+        // Правильно: if (data != null && data.length() > 0) - безопасно
+        
+        // ============================================
+        // ПРИМЕРЫ С МАТЕМАТИЧЕСКИМИ ОПЕРАЦИЯМИ
+        // ============================================
+        System.out.println("\n--- ПРИМЕРЫ С МАТЕМАТИЧЕСКИМИ ОПЕРАЦИЯМИ ---");
+        
+        int a = 10;
+        int b = 0;
+        System.out.println("a = " + a + ", b = " + b);
+        
+        // Проверка перед делением (избегаем деления на ноль)
+        if (b != 0) {
+            double division = (double) a / b;
+            System.out.println("a / b = " + division);
+        } else {
+            System.out.println("Ошибка: деление на ноль невозможно");
+        }
+        
+        // Проверка четности числа
+        int num = 7;
+        if (num % 2 == 0) {
+            System.out.println("Число " + num + " четное");
+        } else {
+            System.out.println("Число " + num + " нечетное");
+        }
+        
+        // Проверка знака числа
+        int value = -5;
+        if (value > 0) {
+            System.out.println("Число " + value + " положительное");
+        } else if (value < 0) {
+            System.out.println("Число " + value + " отрицательное");
+        } else {
+            System.out.println("Число равно нулю");
+        }
+    }
+    
+    /**
+     * Вспомогательный метод для демонстрации проверки на null
+     * В реальном коде это может быть метод, возвращающий значение из БД, API и т.д.
+     * 
+     * @return может вернуть null или строку
+     */
+    private static String getTextValue() {
+        // В реальном коде здесь может быть логика получения значения
+        // Для демонстрации возвращаем null
+        return null;
+    }
+    
+    /**
+     * Вспомогательный метод для демонстрации короткого замыкания
+     * 
+     * @return может вернуть null или строку
+     */
+    private static String getDataValue() {
+        // В реальном коде здесь может быть логика получения значения
+        // Для демонстрации возвращаем null
+        return null;
     }
 }
