@@ -3,14 +3,10 @@ package app_14_access_modifiers;
 /**
  * Демонстрация модификаторов доступа в Java
  *
- * Модификаторы задают, откуда виден класс, поле, метод или конструктор:
- *
  * - private   - только внутри того же класса
- * - default   - (модификатор не пишется) только внутри того же пакета
- * - protected - тот же пакет + подклассы (даже из другого пакета)
+ * - default   - (без модификатора) только внутри пакета
+ * - protected - пакет + подклассы
  * - public    - отовсюду
- *
- * Порядок: private < default < protected < public
  */
 public class AccessModifiers {
 
@@ -18,45 +14,49 @@ public class AccessModifiers {
         System.out.println("=== МОДИФИКАТОРЫ ДОСТУПА ===\n");
 
         Home home = new Home(4);
-        System.out.println("home.window (public поле) = " + home.window);
+        System.out.println("home.window (public) = " + home.window);
 
         Home defaultHome = Home.getDefault();
-        System.out.println("Home.getDefault().window = " + defaultHome.window);
+        System.out.println("getDefault().window = " + defaultHome.window);
 
         home.reboot();
         home.buildPublic();
 
-        System.out.println("\nprivate - свой класс; default - пакет; protected - пакет+наследники; public - везде.");
+        Office office = new Office();
+        office.work();
+
+        Cottage cottage = new Cottage(2);
+        cottage.reboot();
+        System.out.println("cottage.window = " + cottage.window);
     }
 }
 
-/**
- * Класс с разными модификаторами доступа.
- */
+/** Класс с членами private, protected, public. */
 class Home {
     public int window;
 
-    private Home() {
-        this.window = 0;
-    }
+    /** Приватный конструктор: снаружи вызвать нельзя, только из getDefault(). */
+    private Home() { this.window = 0; }
 
-    public static Home getDefault() {
-        return new Home();
-    }
+    public static Home getDefault() { return new Home(); }
 
-    protected Home(int window) {
-        this.window = window;
-    }
+    /** protected: тот же пакет или подкласс. */
+    protected Home(int window) { this.window = window; }
 
-    private void build() {
-        System.out.println("build() (private)");
-    }
+    private void build() { System.out.println("build() (private)"); }
 
-    protected void reboot() {
-        System.out.println("reboot() (protected)");
-    }
+    protected void reboot() { System.out.println("reboot() (protected)"); }
 
-    public void buildPublic() {
-        build();
-    }
+    /** Публичный метод вызывает внутри private build(). */
+    public void buildPublic() { build(); }
+}
+
+/** Класс и метод с доступом по умолчанию (видны только в пакете). */
+class Office {
+    void work() { System.out.println("work() (default)"); }
+}
+
+/** Подкласс Home: может вызывать protected-конструктор и reboot(). */
+class Cottage extends Home {
+    Cottage(int windows) { super(windows); }
 }
