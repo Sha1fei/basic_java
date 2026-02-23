@@ -6,13 +6,18 @@ public class Reflection {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         Class<Reflection_Test> reflection_test = Reflection_Test.class;
         Constructor<Reflection_Test> reflection_test_constructor = reflection_test.getConstructor(String.class);
-        Reflection_Test instance = reflection_test_constructor.newInstance("Ivan"); //�������� instance �����������
+        Reflection_Test instance = reflection_test_constructor.newInstance("Ivan"); //�������� instance �����������
 
         Class<? extends Reflection_Test> reflection_test2 = instance.getClass();
 
         System.out.println("Class name: " + reflection_test.getName());
         System.out.println("Class name: " + reflection_test.getSimpleName());
         System.out.println("Superclass: " + reflection_test.getSuperclass().getName());
+
+        // Системные свойства (для справки: VMOptions -Dkey=value)
+        var systemVariables = System.getProperties();
+        System.out.println("Системные свойства: Java " + systemVariables.getProperty("java.version")
+                + ", ОС: " + systemVariables.getProperty("os.name"));
 
         System.out.println();
         for (Method method : reflection_test.getDeclaredMethods()) {
