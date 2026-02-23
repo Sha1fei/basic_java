@@ -1,9 +1,18 @@
 package app_16_compositions;
 
+/**
+ * Накопитель SSD.
+ * Используется как часть компьютера (композиция).
+ */
 public class Ssd {
-    public int size;
+    /** Объём в гигабайтах (или МБ — по договорённости). */
+    private int size;
 
     public Ssd() {
+    }
+
+    public Ssd(int size) {
+        this.size = size;
     }
 
     public int getSize() {
