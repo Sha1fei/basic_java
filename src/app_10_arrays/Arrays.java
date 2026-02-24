@@ -33,6 +33,11 @@ public class Arrays {
         int[] a_2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         System.out.println("a_2[2]: " + a_2[2]);
         System.out.println("a_2.length: " + a_2.length);
+
+        // Инициализация через new + список значений
+        int[] a_2_short = new int[] {0, 1};
+        System.out.println("a_2_short[1]: " + a_2_short[1]);
+        System.out.println("a_2_short.length: " + a_2_short.length);
         System.out.println();
 
         // ============================================
