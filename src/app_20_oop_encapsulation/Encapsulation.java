@@ -16,9 +16,6 @@ class Computer {
     private int ram;
 
     public void setRam(int ram) {
-        if (ram <= 0) {
-            throw new IllegalArgumentException("RAM must be positive");
-        }
         this.ram = ram;
     }
 
