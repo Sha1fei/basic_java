@@ -10,7 +10,7 @@ package app_19_stringbuilder_and_stringbuffer;
 public class StringBuilderAndStringBuffer {
 
     /**
-     * Примеры конструкторов, insert, append, length и capacity.
+     * Примеры конструкторов, insert, append, length, capacity и toString().
      */
     public static void main(String[] args) {
         // Конструкторы: из строки, пустой, копия из другого StringBuilder
@@ -35,5 +35,11 @@ public class StringBuilderAndStringBuffer {
         StringBuilder sb = new StringBuilder(16);
         sb.append("hello");
         System.out.println("length=" + sb.length() + ", capacity=" + sb.capacity());
+
+        // StringBuilder -> String: метод toString()
+        StringBuilder builder = new StringBuilder("Java");
+        builder.append(" ").append("StringBuilder");
+        String str = builder.toString();
+        System.out.println("StringBuilder -> String (toString()): \"" + str + "\"");
     }
 }
