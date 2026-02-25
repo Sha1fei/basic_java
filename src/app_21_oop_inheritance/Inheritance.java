@@ -5,6 +5,7 @@ public class Inheritance {
         Laptop laptop = new Laptop(1024);
         System.out.println("RAM: " + laptop.getRam());
         System.out.println("SSD: " + laptop.getSsd());
+        System.out.println(": " + laptop.load());
     }
 }
 
@@ -23,6 +24,7 @@ class Computer {
     public Computer() {
         this(0, 2048);
     }
+    
 
     public Computer(int ram, int ssd) {
         this.ram = ram;
@@ -35,6 +37,15 @@ class Computer {
 
     public int getSsd() {
         return ssd;
+    }
+
+
+    public void setSsd(int ssd) {
+        this.ssd = ssd;
+    }
+
+    public void setRam(int ssd) {
+        this.ssd = ssd;
     }
 }
 
@@ -54,6 +65,16 @@ final class Laptop extends Computer {
     public Laptop(int ram) {
         super(ram, 512);
         System.out.println("Static init: class is loaded once.");
+    }
+
+    /**
+     * Метод демонстрирует работу с унаследованными методами:
+     * меняет значение через сеттер, выводит RAM и возвращает строку.
+     */
+    public String load (){
+        super.setRam(5000);
+        System.out.println(super.getRam());
+        return "I'm laoded";
     }
 
     // Конструктор по умолчанию
