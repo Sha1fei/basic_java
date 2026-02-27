@@ -1,26 +1,27 @@
 package app_24_oop_interfaces;
 
 public interface Test {
-    String CONSTANT_TEST = "run test"; // по началу константы в интферфейсах public static final
+    // Р’СЃРµ РїРѕР»СЏ РёРЅС‚РµСЂС„РµР№СЃР° РЅРµСЏРІРЅРѕ public static final.
+    String CONSTANT_TEST = "run test";
 
+    // РЎС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ РёРЅС‚РµСЂС„РµР№СЃР°.
     static String test4() {
         return "run test4";
     }
 
+    // РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РјРµС‚РѕРґ: РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СЂРµР°Р»РёР·РѕРІР°РЅ РєР»Р°СЃСЃРѕРј.
     void test5();
 
+    // default-РјРµС‚РѕРґ: РёРјРµРµС‚ СЂРµР°Р»РёР·Р°С†РёСЋ Рё РјРѕР¶РµС‚ Р±С‹С‚СЊ РїРµСЂРµРѕРїСЂРµРґРµР»С‘РЅ.
     default void test2() {
         System.out.println(Test.CONSTANT_TEST);
-        System.out.println("run test2"); // возможно создавать дефолтные методы с телом в интерфейсах
+        System.out.println("run test2");
         test3();
         System.out.println(Test.test4());
-        ;
-
     }
 
-    ;
-
+    // РџСЂРёРІР°С‚РЅС‹Р№ РјРµС‚РѕРґ: РґРѕСЃС‚СѓРїРµРЅ С‚РѕР»СЊРєРѕ РІРЅСѓС‚СЂРё РёРЅС‚РµСЂС„РµР№СЃР° (РІ Java 9+).
     private void test3() {
-        System.out.println("run test3"); // примватные ментоды не доступны извне, но доступны внутри интерфейса
+        System.out.println("run test3");
     }
 }

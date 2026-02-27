@@ -1,12 +1,16 @@
 package app_24_oop_interfaces;
 
-public class Interfaces implements Test { // интерфейсы в отличии от абсткратных классов - позволяют множественную реализацию (extends vs implements)
+// Р РµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµР№СЃР° С‡РµСЂРµР· implements (РІ РѕС‚Р»РёС‡РёРµ РѕС‚ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ extends).
+public class Interfaces implements Test {
     public static void main(String[] args) {
-        Interfaces custom_interface = new Interfaces();
-        custom_interface.test2();
-        custom_interface.test5();
+        Interfaces demo = new Interfaces();
+        // default-РјРµС‚РѕРґ РёР· РёРЅС‚РµСЂС„РµР№СЃР°
+        demo.test2();
+        // СЂРµР°Р»РёР·Р°С†РёСЏ Р°Р±СЃС‚СЂР°РєС‚РЅРѕРіРѕ РјРµС‚РѕРґР° РёРЅС‚РµСЂС„РµР№СЃР°
+        demo.test5();
     }
 
+    @Override
     public void test5() {
         System.out.println("run test5");
     }
