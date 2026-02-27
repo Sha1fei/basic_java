@@ -39,6 +39,14 @@ abstract class Animal {
 
     // Абстрактный метод: каждая реализация задаёт имя по-своему.
     public abstract void setName(String name);
+
+    // Утилита для нормализации имени (общая для наследников).
+    protected String normalizeName(String name, String defaultName) {
+        if (name == null || name.isBlank()) {
+            return defaultName;
+        }
+        return name.trim();
+    }
 }
 
 class Cat extends Animal {
@@ -46,7 +54,7 @@ class Cat extends Animal {
     // Для кота имя остаётся как есть.
     @Override
     public void setName(String name) {
-        this.name = name;
+        this.name = normalizeName(name, "Без имени");
     }
 
 }
@@ -56,7 +64,8 @@ class Dog extends Animal {
     // Для собаки добавляем префикс при установке имени.
     @Override
     public void setName(String name) {
-        this.name = "Dog: " + name;
+        String baseName = normalizeName(name, "Без имени");
+        this.name = "Dog: " + baseName;
     }
 }
 
