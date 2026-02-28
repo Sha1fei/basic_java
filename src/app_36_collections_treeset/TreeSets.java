@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class TreeSets {
     public static void main(String[] args) {
 
-        Set<Pet> treeSet = new TreeSet<>(); // строит красно бело дерево
+        Set<Pet> treeSet = new TreeSet<>(); // СЃС‚СЂРѕРёС‚ РєСЂР°СЃРЅРѕ Р±РµР»Рѕ РґРµСЂРµРІРѕ
 
         Pet pet1 = new Pet(1, "Vaska");
         Pet pet2 = new Pet(3, "Tuzik");

@@ -10,7 +10,7 @@ public class File_IO {
 
         File file_1 = new File("C:\\Work\\resume\\basic_java\\src\\app_48_stream_io_file\\resources\\test1.txt");
         File file_2 = new File("C:\\Work\\resume\\basic_java\\src\\app_48_stream_io_file\\resources\\test.txt");
-        File file_3 = new File(String.join(File.separator, "C:", "Work", "resume", "basic_java", "src", "app_48_stream_io_file", "resources")); //File.separator - системно независимый \ в пути
+        File file_3 = new File(String.join(File.separator, "C:", "Work", "resume", "basic_java", "src", "app_48_stream_io_file", "resources")); //File.separator - СЃРёСЃС‚РµРјРЅРѕ РЅРµР·Р°РІРёСЃРёРјС‹Р№ \ РІ РїСѓС‚Рё
 
         System.out.println(file_1.exists());
         System.out.println(file_1.isFile());
@@ -20,9 +20,9 @@ public class File_IO {
         System.out.println(file_2.getParent());
         System.out.println(file_2.getName());
         System.out.println(file_2.length());
-        System.out.println(file_2.canExecute()); // права доступа exective canRead, canWrite
+        System.out.println(file_2.canExecute()); // РїСЂР°РІР° РґРѕСЃС‚СѓРїР° exective canRead, canWrite
         System.out.println(file_2.compareTo(file_1));
         System.out.println(file_2.delete());
-        Arrays.asList(file_3.list()).stream().forEach(System.out::println); // получение списка файлов
+        Arrays.asList(file_3.list()).stream().forEach(System.out::println); // РїРѕР»СѓС‡РµРЅРёРµ СЃРїРёСЃРєР° С„Р°Р№Р»РѕРІ
     }
 }

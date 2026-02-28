@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Dequeues {
     public static void main(String[] args) {
-        Deque<Pet> deque = new ArrayDeque<>(); // двустороняя очередь stack + queue
+        Deque<Pet> deque = new ArrayDeque<>(); // РґРІСѓСЃС‚РѕСЂРѕРЅСЏСЏ РѕС‡РµСЂРµРґСЊ stack + queue
 
         Pet pet1 = new Pet(1, "Vaska");
         Pet pet2 = new Pet(3, "Tuzik");

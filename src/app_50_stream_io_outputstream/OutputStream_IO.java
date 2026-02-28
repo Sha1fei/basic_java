@@ -13,20 +13,20 @@ public class OutputStream_IO {
         Path file_3 = Path.of("src", "app_50_stream_io_outputstream", "resources", "test2.txt");
         try (
                 FileOutputStream outputStream_1 = new FileOutputStream(file);
-                FileWriter outputStream_2 = new FileWriter(file, true); // Задание потока через FileReader (только текст)
-        ) { //для закртыия стрима,после его использования AutoClosable и избежания утечки памяти
-            // загрузить строку целиком
+                FileWriter outputStream_2 = new FileWriter(file, true); // Р—Р°РґР°РЅРёРµ РїРѕС‚РѕРєР° С‡РµСЂРµР· FileReader (С‚РѕР»СЊРєРѕ С‚РµРєСЃС‚)
+        ) { //РґР»СЏ Р·Р°РєСЂС‚С‹РёСЏ СЃС‚СЂРёРјР°,РїРѕСЃР»Рµ РµРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ AutoClosable Рё РёР·Р±РµР¶Р°РЅРёСЏ СѓС‚РµС‡РєРё РїР°РјСЏС‚Рё
+            // Р·Р°РіСЂСѓР·РёС‚СЊ СЃС‚СЂРѕРєСѓ С†РµР»РёРєРѕРј
             String text = "Test text";
             outputStream_1.write(text.getBytes());
 
-            // запись в файл потоково
+            // Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р» РїРѕС‚РѕРєРѕРІРѕ
             try (BufferedWriter writer = new BufferedWriter(outputStream_2)) {
                 writer.newLine();
                 writer.append(text);
-                writer.append(System.lineSeparator()); // перевод на новую строку
+                writer.append(System.lineSeparator()); // РїРµСЂРµРІРѕРґ РЅР° РЅРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ
             }
 
-            // наиболее современный вариант записи
+            // РЅР°РёР±РѕР»РµРµ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РІР°СЂРёР°РЅС‚ Р·Р°РїРёСЃРё
             Files.copy(file_2, file_3);
             Files.write(file_2, List.of("Hello wolrd"), StandardOpenOption.APPEND);
             Files.delete(file_3);

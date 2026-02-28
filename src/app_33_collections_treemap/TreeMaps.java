@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class TreeMaps {
     public static void main(String[] args) {
-        Map<Integer, Pet> treeMap = new TreeMap<>(); // строит красно бело дерево
+        Map<Integer, Pet> treeMap = new TreeMap<>(); // СЃС‚СЂРѕРёС‚ РєСЂР°СЃРЅРѕ Р±РµР»Рѕ РґРµСЂРµРІРѕ
 
         Pet pet1 = new Pet(1, "Vaska");
         Pet pet2 = new Pet(3, "Tuzik");

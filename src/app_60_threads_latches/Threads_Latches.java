@@ -19,9 +19,9 @@ public class Threads_Latches {
         List<File> filesSemaphore = Arrays.asList(Path.of("src", "app_60_threads_latches", "files").toFile().listFiles());
         ArrayBlockingQueue<File> blockingFileDequeSemaphore = new ArrayBlockingQueue<>(filesSemaphore.size(), false, filesSemaphore);
 
-        CountDownLatch countDownLatch = new CountDownLatch(blockingFileDequeCountDownLatch.size()); // блочит все потоки с вызванным countDownLatch.await(); пока не будет вызвано указанное колличество при инициации countDownLatch.countDown();
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(blockingFileDequeCyclicBarrier.size()); // блочит все потоки с вызванным  cyclicBarrier.await(); пока не будет вызвано указанное колличество при инициации countDownLatch.await();
-        Semaphore semaphore = new Semaphore(blockingFileDequeSemaphore.size()); // блочит дальнейшее выполенение потока, если коллчество обращений к семафору превысило инициализируемое значение (блокирование колличество semaphore.acquire(); - разблокирование semaphore.release();)
+        CountDownLatch countDownLatch = new CountDownLatch(blockingFileDequeCountDownLatch.size()); // Р±Р»РѕС‡РёС‚ РІСЃРµ РїРѕС‚РѕРєРё СЃ РІС‹Р·РІР°РЅРЅС‹Рј countDownLatch.await(); РїРѕРєР° РЅРµ Р±СѓРґРµС‚ РІС‹Р·РІР°РЅРѕ СѓРєР°Р·Р°РЅРЅРѕРµ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ РїСЂРё РёРЅРёС†РёР°С†РёРё countDownLatch.countDown();
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(blockingFileDequeCyclicBarrier.size()); // Р±Р»РѕС‡РёС‚ РІСЃРµ РїРѕС‚РѕРєРё СЃ РІС‹Р·РІР°РЅРЅС‹Рј  cyclicBarrier.await(); РїРѕРєР° РЅРµ Р±СѓРґРµС‚ РІС‹Р·РІР°РЅРѕ СѓРєР°Р·Р°РЅРЅРѕРµ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ РїСЂРё РёРЅРёС†РёР°С†РёРё countDownLatch.await();
+        Semaphore semaphore = new Semaphore(blockingFileDequeSemaphore.size()); // Р±Р»РѕС‡РёС‚ РґР°Р»СЊРЅРµР№С€РµРµ РІС‹РїРѕР»РµРЅРµРЅРёРµ РїРѕС‚РѕРєР°, РµСЃР»Рё РєРѕР»Р»С‡РµСЃС‚РІРѕ РѕР±СЂР°С‰РµРЅРёР№ Рє СЃРµРјР°С„РѕСЂСѓ РїСЂРµРІС‹СЃРёР»Рѕ РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ (Р±Р»РѕРєРёСЂРѕРІР°РЅРёРµ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ semaphore.acquire(); - СЂР°Р·Р±Р»РѕРєРёСЂРѕРІР°РЅРёРµ semaphore.release();)
 
         ExecutorService threadPoolCountDownLatch = Executors.newFixedThreadPool(2);
         threadPoolCountDownLatch.submit(() -> {
@@ -30,7 +30,7 @@ public class Threads_Latches {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("CountDownLatch: все файлы считаны");
+            System.out.println("CountDownLatch: РІСЃРµ С„Р°Р№Р»С‹ СЃС‡РёС‚Р°РЅС‹");
         });
         while (!blockingFileDequeCountDownLatch.isEmpty()) {
             threadPoolCountDownLatch.submit(new ReaderFileCountDownLatch(countDownLatch, blockingFileDequeCountDownLatch));
@@ -45,7 +45,7 @@ public class Threads_Latches {
             } catch (BrokenBarrierException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("CyclicBarrier: все файлы считаны");
+            System.out.println("CyclicBarrier: РІСЃРµ С„Р°Р№Р»С‹ СЃС‡РёС‚Р°РЅС‹");
         });
         blockingFileDequeCyclicBarrier.stream().map(file -> new ReaderFileCyclicBarrier(cyclicBarrier, file)).forEach(runnable -> {
             threadPoolCyclicBarrier.submit(runnable);
@@ -58,7 +58,7 @@ public class Threads_Latches {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("Semaphore: все файлы считаны");
+            System.out.println("Semaphore: РІСЃРµ С„Р°Р№Р»С‹ СЃС‡РёС‚Р°РЅС‹");
             semaphore.release();
         });
         blockingFileDequeSemaphore.stream().map(file -> new ReaderFileSemaphore(semaphore, file)).forEach(runnable -> {
@@ -89,9 +89,9 @@ class ReaderFileCountDownLatch implements Callable {
     public String call() throws Exception {
         File file = list.poll();
         if (file.exists()) {
-            System.out.println("CountDownLatch: Начало считывания значения файла " + file.getName() + " потоком: " + Thread.currentThread().getName());
+            System.out.println("CountDownLatch: РќР°С‡Р°Р»Рѕ СЃС‡РёС‚С‹РІР°РЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ С„Р°Р№Р»Р° " + file.getName() + " РїРѕС‚РѕРєРѕРј: " + Thread.currentThread().getName());
             String fileValue = Files.readAllLines(file.toPath()).stream().reduce("", (acc, string) -> acc + string);
-            System.out.println("CountDownLatch: Значения файла " + fileValue);
+            System.out.println("CountDownLatch: Р—РЅР°С‡РµРЅРёСЏ С„Р°Р№Р»Р° " + fileValue);
             countDownLatch.countDown();
             return fileValue;
         }
@@ -111,14 +111,14 @@ class ReaderFileCyclicBarrier implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("CyclicBarrier: Начало считывания значения файла " + file.getName() + " потоком: " + Thread.currentThread().getName());
+        System.out.println("CyclicBarrier: РќР°С‡Р°Р»Рѕ СЃС‡РёС‚С‹РІР°РЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ С„Р°Р№Р»Р° " + file.getName() + " РїРѕС‚РѕРєРѕРј: " + Thread.currentThread().getName());
         String fileValue = null;
         try {
             fileValue = Files.readAllLines(file.toPath()).stream().reduce("", (acc, string) -> acc + string);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("CyclicBarrier: Значения файла " + fileValue);
+        System.out.println("CyclicBarrier: Р—РЅР°С‡РµРЅРёСЏ С„Р°Р№Р»Р° " + fileValue);
         try {
             cyclicBarrier.await();
         } catch (InterruptedException e) {
@@ -146,14 +146,14 @@ class ReaderFileSemaphore implements Runnable {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Semaphore: Начало считывания значения файла " + file.getName() + " потоком: " + Thread.currentThread().getName());
+        System.out.println("Semaphore: РќР°С‡Р°Р»Рѕ СЃС‡РёС‚С‹РІР°РЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ С„Р°Р№Р»Р° " + file.getName() + " РїРѕС‚РѕРєРѕРј: " + Thread.currentThread().getName());
         String fileValue = null;
         try {
             fileValue = Files.readAllLines(file.toPath()).stream().reduce("", (acc, string) -> acc + string);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Semaphore: Значения файла " + fileValue);
+        System.out.println("Semaphore: Р—РЅР°С‡РµРЅРёСЏ С„Р°Р№Р»Р° " + fileValue);
         semaphore.release();
     }
 }

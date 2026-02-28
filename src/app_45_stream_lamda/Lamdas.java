@@ -6,20 +6,20 @@ import java.util.function.*;
 
 public class Lamdas {
     public static void main(String[] args) {
-        TestFunctionalInterface<String> lambda_1 = o1 -> "Hello, " + o1; // кастомное ламбда выражение 1
+        TestFunctionalInterface<String> lambda_1 = o1 -> "Hello, " + o1; // РєР°СЃС‚РѕРјРЅРѕРµ Р»Р°РјР±РґР° РІС‹СЂР°Р¶РµРЅРёРµ 1
         System.out.println(lambda_1.test("Valentin"));
 
-        TestFunctionalInterface2<Integer> lambda_2 = (o1, o2) -> Integer.compare(o1, o2); // кастомное ламбда выражение 2
+        TestFunctionalInterface2<Integer> lambda_2 = (o1, o2) -> Integer.compare(o1, o2); // РєР°СЃС‚РѕРјРЅРѕРµ Р»Р°РјР±РґР° РІС‹СЂР°Р¶РµРЅРёРµ 2
         System.out.println(lambda_2.test(1, 2));
 
-        TestFunctionalInterface2<Integer> lambda_3 = Integer::compare; // кастомное ламбда выражение 3 (сокращенная форма записи если мы ссылаемся на метод существующего класса в java)
+        TestFunctionalInterface2<Integer> lambda_3 = Integer::compare; // РєР°СЃС‚РѕРјРЅРѕРµ Р»Р°РјР±РґР° РІС‹СЂР°Р¶РµРЅРёРµ 3 (СЃРѕРєСЂР°С‰РµРЅРЅР°СЏ С„РѕСЂРјР° Р·Р°РїРёСЃРё РµСЃР»Рё РјС‹ СЃСЃС‹Р»Р°РµРјСЃСЏ РЅР° РјРµС‚РѕРґ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ РєР»Р°СЃСЃР° РІ java)
         System.out.println(lambda_3.test(1, 2));
 
         TestFunctionalExample test = new TestFunctionalExample();
-        TestFunctionalInterface2<Integer> lambda_4 = test::somebodyMethods; // кастомное ламбда выражение 4 (сокращенная форма записи если мы ссылаемся на метод кастомного класса класса)
+        TestFunctionalInterface2<Integer> lambda_4 = test::somebodyMethods; // РєР°СЃС‚РѕРјРЅРѕРµ Р»Р°РјР±РґР° РІС‹СЂР°Р¶РµРЅРёРµ 4 (СЃРѕРєСЂР°С‰РµРЅРЅР°СЏ С„РѕСЂРјР° Р·Р°РїРёСЃРё РµСЃР»Рё РјС‹ СЃСЃС‹Р»Р°РµРјСЃСЏ РЅР° РјРµС‚РѕРґ РєР°СЃС‚РѕРјРЅРѕРіРѕ РєР»Р°СЃСЃР° РєР»Р°СЃСЃР°)
         System.out.println(lambda_4.test(1, 2));
 
-        //Имеющиеся в java готовые конструкции FunctionalInterface
+        //РРјРµСЋС‰РёРµСЃСЏ РІ java РіРѕС‚РѕРІС‹Рµ РєРѕРЅСЃС‚СЂСѓРєС†РёРё FunctionalInterface
         Comparator<Integer> comparator = (o1, o2) -> Integer.compare(o1, o2); // input: any, any return: int
         System.out.println(comparator.compare(2, 1));
 
@@ -29,12 +29,12 @@ public class Lamdas {
         Predicate<Integer> predicate = o1 -> o1 > 4; // input: any, return: boolean
         System.out.println(predicate.test(3));
 
-        Consumer<Integer> consumer = o1 -> {  // input: any, return: void (похож на setter)
+        Consumer<Integer> consumer = o1 -> {  // input: any, return: void (РїРѕС…РѕР¶ РЅР° setter)
             System.out.println(o1);
         };
         consumer.accept(5);
 
-        Supplier<Integer> supplier = () -> 6; // input: void, return: any (похож на getter)
+        Supplier<Integer> supplier = () -> 6; // input: void, return: any (РїРѕС…РѕР¶ РЅР° getter)
         System.out.println(supplier.get());
 
         BiFunction<Integer, Integer, String> biFunction = (o1, o2) -> o1 + o2 + " "; // input: any, any; return: any

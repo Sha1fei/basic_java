@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class LinkedHashSets {
     public static void main(String[] args) {
-        Set<Pet> linkedHashSet = new LinkedHashSet<>(); // Порядок при итерации по map не гарантируется
+        Set<Pet> linkedHashSet = new LinkedHashSet<>(); // РџРѕСЂСЏРґРѕРє РїСЂРё РёС‚РµСЂР°С†РёРё РїРѕ map РЅРµ РіР°СЂР°РЅС‚РёСЂСѓРµС‚СЃСЏ
         Pet pet1 = new Pet(1, "Vaska");
         Pet pet2 = new Pet(3, "Tuzik");
         Pet pet3 = new Pet(2, "Bulka");

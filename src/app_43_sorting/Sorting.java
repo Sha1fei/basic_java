@@ -42,16 +42,16 @@ public class Sorting {
         arrayList4.add(pet7);
         arrayList4.add(pet8);
 
-        //Вариант первый
+        //Р’Р°СЂРёР°РЅС‚ РїРµСЂРІС‹Р№
         arrayList1.sort((o1, o2) -> Integer.compare(o1, o2));
 
-        //Вариант второй
+        //Р’Р°СЂРёР°РЅС‚ РІС‚РѕСЂРѕР№
         Collections.sort(arrayList2);
 
-        //Вариант третий
+        //Р’Р°СЂРёР°РЅС‚ С‚СЂРµС‚РёР№
         Collections.sort(arrayList3);
 
-        //Вариант четвертый
+        //Р’Р°СЂРёР°РЅС‚ С‡РµС‚РІРµСЂС‚С‹Р№
         Collections.sort(arrayList4, new PetComparator());
 
         System.out.println(arrayList1);

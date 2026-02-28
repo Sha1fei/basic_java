@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 public class HashTables {
     public static void main(String[] args) {
-        Hashtable<Integer, Pet> hashTable = new Hashtable<>(); // устарелая версия hashMap
+        Hashtable<Integer, Pet> hashTable = new Hashtable<>(); // СѓСЃС‚Р°СЂРµР»Р°СЏ РІРµСЂСЃРёСЏ hashMap
         Pet pet1 = new Pet(1, "Vaska");
         hashTable.put(pet1.getId(), pet1);
         Pet el = hashTable.get(1);

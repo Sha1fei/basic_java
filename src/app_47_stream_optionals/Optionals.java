@@ -6,20 +6,20 @@ import java.util.stream.Stream;
 public class Optionals {
     public static void main(String[] args) {
         String list = Stream.of("b", "a", "d", "c")
-                .reduce("", (acc, letter) -> letter == "c" ? letter : acc); // "" - начальное значение, преобразует в NotNullable (не нужен Optional)
+                .reduce("", (acc, letter) -> letter == "c" ? letter : acc); // "" - РЅР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РїСЂРµРѕР±СЂР°Р·СѓРµС‚ РІ NotNullable (РЅРµ РЅСѓР¶РµРЅ Optional)
         System.out.println(list);
         Optional<String> list2 = Stream.of("b", "a", "d", "c")
-                .reduce((acc, letter) -> letter == "j" ? letter : acc); // использует первое значение в качестве начального
+                .reduce((acc, letter) -> letter == "j" ? letter : acc); // РёСЃРїРѕР»СЊР·СѓРµС‚ РїРµСЂРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РєР°С‡РµСЃС‚РІРµ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ
         System.out.println(list2);
         Optional<String> test = Stream.of("c", "a", "d", "l")
-                .reduce((acc, letter) -> letter != "d" ? letter : acc);// reduce - преобразует к термирнальному значению
+                .reduce((acc, letter) -> letter != "d" ? letter : acc);// reduce - РїСЂРµРѕР±СЂР°Р·СѓРµС‚ Рє С‚РµСЂРјРёСЂРЅР°Р»СЊРЅРѕРјСѓ Р·РЅР°С‡РµРЅРёСЋ
         System.out.println(test.isPresent());
-        test.ifPresent(o -> System.out.println(o)); // запустить если есть
+        test.ifPresent(o -> System.out.println(o)); // Р·Р°РїСѓСЃС‚РёС‚СЊ РµСЃР»Рё РµСЃС‚СЊ
         test.ifPresentOrElse(o -> {
             System.out.println("o1");
         }, () -> {
             System.out.println("o2");
-        }); // Либ одно запусти, либ другое
+        }); // Р›РёР± РѕРґРЅРѕ Р·Р°РїСѓСЃС‚Рё, Р»РёР± РґСЂСѓРіРѕРµ
         System.out.println(test.isPresent());
         System.out.println(test.isEmpty());
         System.out.println(test.get());
@@ -27,6 +27,6 @@ public class Optionals {
         System.out.println(test.map(x -> null).flatMap(x -> Optional.of(x)).map(x -> {
             System.out.println(x);
             return x;
-        })); // делает из потока Optionals, другой поток Optionals
+        })); // РґРµР»Р°РµС‚ РёР· РїРѕС‚РѕРєР° Optionals, РґСЂСѓРіРѕР№ РїРѕС‚РѕРє Optionals
     }
 }

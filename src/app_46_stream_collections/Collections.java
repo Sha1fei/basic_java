@@ -9,23 +9,23 @@ import java.util.stream.Stream;
 public class Collections {
     public static void main(String[] args) {
         // Create
-        List<String> list_3 = Stream.of("b", "a", "d", "c").map(o1 -> o1 + " ").peek(System.out::print).collect(Collectors.toList()); // peek - не терминальный метод
+        List<String> list_3 = Stream.of("b", "a", "d", "c").map(o1 -> o1 + " ").peek(System.out::print).collect(Collectors.toList()); // peek - РЅРµ С‚РµСЂРјРёРЅР°Р»СЊРЅС‹Р№ РјРµС‚РѕРґ
         System.out.println();
         List<Integer> list_4 = IntStream.of(1, 2, 3, 4).map(o1 -> o1).peek(System.out::print).boxed().collect(Collectors.toList());
         System.out.println();
         // Usage
         List<String> list = Arrays.asList("b", "a", "d", "c");
         List<String> list2 = list.stream()
-                .sequential() // - выполнять в одном потоке
-                .parallel() // - выполнять в паралелльных потоках
+                .sequential() // - РІС‹РїРѕР»РЅСЏС‚СЊ РІ РѕРґРЅРѕРј РїРѕС‚РѕРєРµ
+                .parallel() // - РІС‹РїРѕР»РЅСЏС‚СЊ РІ РїР°СЂР°Р»РµР»Р»СЊРЅС‹С… РїРѕС‚РѕРєР°С…
                 .map(o1 -> o1 + ", ")
                 .filter(o -> !o.startsWith("c"))
                 .sorted((o1, o2) -> o1.compareTo(o2))
                 .skip(1)
                 .limit(2)
-                .collect(Collectors.toList()); // выдает коллекцию на выход
+                .collect(Collectors.toList()); // РІС‹РґР°РµС‚ РєРѕР»Р»РµРєС†РёСЋ РЅР° РІС‹С…РѕРґ
 
-        list2.stream().forEach(System.out::print); // forEach - терминальный метод
+        list2.stream().forEach(System.out::print); // forEach - С‚РµСЂРјРёРЅР°Р»СЊРЅС‹Р№ РјРµС‚РѕРґ
         System.out.println();
 
         for (String s : list2) {
@@ -33,7 +33,7 @@ public class Collections {
         }
 
         System.out.println();
-        List<String> list_5 = Stream.of(new Pet("Juk"), new Pet("Kol"), new Pet("Loki")).flatMap(x -> Stream.of(x.getName())).collect(Collectors.toList()); //flatMap - деаем из потока одних данных, поток других данных
+        List<String> list_5 = Stream.of(new Pet("Juk"), new Pet("Kol"), new Pet("Loki")).flatMap(x -> Stream.of(x.getName())).collect(Collectors.toList()); //flatMap - РґРµР°РµРј РёР· РїРѕС‚РѕРєР° РѕРґРЅРёС… РґР°РЅРЅС‹С…, РїРѕС‚РѕРє РґСЂСѓРіРёС… РґР°РЅРЅС‹С…
         System.out.println(list_5);
 
         Stream<String> list_6 = Stream.of("a", "b");

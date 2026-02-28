@@ -11,7 +11,7 @@ public class Threads_Collections {
         ConcurrentHashMap<String, Integer> concurrentMap = new ConcurrentHashMap<>();
         Comparator<Integer> comparator = Integer::compare;
         Comparator<String> comparator_2 = new StringComparator();
-        ConcurrentSkipListMap<String, Integer> concurrentNavigableMap = new ConcurrentSkipListMap<>(comparator_2); // аналог treemap в коллекциях
+        ConcurrentSkipListMap<String, Integer> concurrentNavigableMap = new ConcurrentSkipListMap<>(comparator_2); // Р°РЅР°Р»РѕРі treemap РІ РєРѕР»Р»РµРєС†РёСЏС…
         ConcurrentSkipListSet<Integer> concurrentSkipListSet = new ConcurrentSkipListSet<>(comparator);
 
         ExecutorService threadPool1 = Executors.newFixedThreadPool(5);

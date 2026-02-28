@@ -5,135 +5,135 @@ import java.util.regex.Pattern;
 
 public class Regular {
     public static void main(String[] args) {
-        // Примеры Regexp (полное совпадение)
-        // ^ - начало строки
+        // РџСЂРёРјРµСЂС‹ Regexp (РїРѕР»РЅРѕРµ СЃРѕРІРїР°РґРµРЅРёРµ)
+        // ^ - РЅР°С‡Р°Р»Рѕ СЃС‚СЂРѕРєРё
         String text_1 = "Valya";
-        Pattern pattern_1 = Pattern.compile("^Valya"); //первый вариант реализации pattern
+        Pattern pattern_1 = Pattern.compile("^Valya"); //РїРµСЂРІС‹Р№ РІР°СЂРёР°РЅС‚ СЂРµР°Р»РёР·Р°С†РёРё pattern
         Matcher matcher_1 = pattern_1.matcher(text_1);
         System.out.println("matcher_1: " + matcher_1.matches());
 
-        // $ - конец строки
+        // $ - РєРѕРЅРµС† СЃС‚СЂРѕРєРё
         String text_2 = "Valya";
         boolean matcher_2 = Pattern.matches("Valya$", text_2);
         System.out.println("matcher_2: " + matcher_2);
 
-        //. - любой символ
+        //. - Р»СЋР±РѕР№ СЃРёРјРІРѕР»
         String text_3 = "Valya";
         Pattern pattern_3 = Pattern.compile("Va.ya");
         Matcher matcher_3 = pattern_3.matcher(text_3);
         System.out.println("matcher_3: " + matcher_3.matches());
 
-        // \\d - цифровой символ
+        // \\d - С†РёС„СЂРѕРІРѕР№ СЃРёРјРІРѕР»
         String text_4 = "1";
         Pattern pattern_4 = Pattern.compile("\\d");
         Matcher matcher_4 = pattern_4.matcher(text_4);
         System.out.println("matcher_4: " + matcher_4.matches());
 
-        // \\D - не цифровой символ
+        // \\D - РЅРµ С†РёС„СЂРѕРІРѕР№ СЃРёРјРІРѕР»
         String text_5 = "V";
         Pattern pattern_5 = Pattern.compile("\\D");
         Matcher matcher_5 = pattern_5.matcher(text_5);
         System.out.println("matcher_5: " + matcher_5.matches());
 
-        // \\s - любой пробельный символ
+        // \\s - Р»СЋР±РѕР№ РїСЂРѕР±РµР»СЊРЅС‹Р№ СЃРёРјРІРѕР»
         String text_6 = " ";
         Pattern pattern_6 = Pattern.compile("\\s");
         Matcher matcher_6 = pattern_6.matcher(text_6);
         System.out.println("matcher_6: " + matcher_6.matches());
 
-        // \\S - любой не пробельный символ
+        // \\S - Р»СЋР±РѕР№ РЅРµ РїСЂРѕР±РµР»СЊРЅС‹Р№ СЃРёРјРІРѕР»
         String text_7 = "V";
         Pattern pattern_7 = Pattern.compile("\\S");
         Matcher matcher_7 = pattern_7.matcher(text_7);
         System.out.println("matcher_7: " + matcher_7.matches());
 
-        // \\w - любой буквенный или цифровой символ
+        // \\w - Р»СЋР±РѕР№ Р±СѓРєРІРµРЅРЅС‹Р№ РёР»Рё С†РёС„СЂРѕРІРѕР№ СЃРёРјРІРѕР»
         String text_8 = "V";
         Pattern pattern_8 = Pattern.compile("\\w");
         Matcher matcher_8 = pattern_8.matcher(text_8);
         System.out.println("matcher_8: " + matcher_8.matches());
 
-        // \\W - любой не буквенный или цифровой символ
+        // \\W - Р»СЋР±РѕР№ РЅРµ Р±СѓРєРІРµРЅРЅС‹Р№ РёР»Рё С†РёС„СЂРѕРІРѕР№ СЃРёРјРІРѕР»
         String text_9 = " ";
         Pattern pattern_9 = Pattern.compile("\\W");
         Matcher matcher_9 = pattern_9.matcher(text_9);
         System.out.println("matcher_9: " + matcher_9.matches());
 
-        // + - один или более
+        // + - РѕРґРёРЅ РёР»Рё Р±РѕР»РµРµ
         String text_10 = "Valya";
         Pattern pattern_10 = Pattern.compile("\\w+");
         Matcher matcher_10 = pattern_10.matcher(text_10);
         System.out.println("matcher_10: " + matcher_10.matches());
 
-        // * - ноль или более
+        // * - РЅРѕР»СЊ РёР»Рё Р±РѕР»РµРµ
         String text_11 = "Valya";
         Pattern pattern_11 = Pattern.compile("\\w*");
         Matcher matcher_11 = pattern_11.matcher(text_11);
         System.out.println("matcher_11: " + matcher_11.matches());
 
-        //? - ноль или один
+        //? - РЅРѕР»СЊ РёР»Рё РѕРґРёРЅ
         String text_12 = "Valya";
         Pattern pattern_12 = Pattern.compile("Val?ya");
         Matcher matcher_12 = pattern_12.matcher(text_12);
         System.out.println("matcher_12: " + matcher_12.matches());
 
-        //{n} - ровнео n раз
+        //{n} - СЂРѕРІРЅРµРѕ n СЂР°Р·
         String text_13 = "Vallya";
         Pattern pattern_13 = Pattern.compile("Val{2}ya");
         Matcher matcher_13 = pattern_13.matcher(text_13);
         System.out.println("matcher_13: " + matcher_13.matches());
 
-        // {n,m} - от n до m раз
+        // {n,m} - РѕС‚ n РґРѕ m СЂР°Р·
         String text_14 = "Valllya";
         Pattern pattern_14 = Pattern.compile("Val{2,3}ya");
         Matcher matcher_14 = pattern_14.matcher(text_14);
         System.out.println("matcher_14: " + matcher_14.matches());
 
-        // {n,} - от n до бесконечности
+        // {n,} - РѕС‚ n РґРѕ Р±РµСЃРєРѕРЅРµС‡РЅРѕСЃС‚Рё
         String text_15 = "Valllllya";
         Pattern pattern_15 = Pattern.compile("Val{2,}ya");
         Matcher matcher_15 = pattern_15.matcher(text_15);
         System.out.println("matcher_15: " + matcher_15.matches());
 
-        // (a|b) - a или b
+        // (a|b) - a РёР»Рё b
         String text_16 = "Valya";
         Pattern pattern_16 = Pattern.compile("V(a|b)lya");
         Matcher matcher_16 = pattern_16.matcher(text_16);
         System.out.println("matcher_16: " + matcher_16.matches());
 
-        // [Vv] - V или v,
+        // [Vv] - V РёР»Рё v,
         String text_17 = "Valya";
         Pattern pattern_17 = Pattern.compile("[Vv]alya");
         Matcher matcher_17 = pattern_17.matcher(text_17);
         System.out.println("matcher_17: " + matcher_17.matches());
 
-        // [A-z,0-9] - указанный диапазон
+        // [A-z,0-9] - СѓРєР°Р·Р°РЅРЅС‹Р№ РґРёР°РїР°Р·РѕРЅ
         String text_18 = "Valya";
         Pattern pattern_18 = Pattern.compile("[Vv]alya");
         Matcher matcher_18 = pattern_18.matcher(text_18);
         System.out.println("matcher_18: " + matcher_18.matches());
 
-        // [A-z,0-9] - указанный диапазон
+        // [A-z,0-9] - СѓРєР°Р·Р°РЅРЅС‹Р№ РґРёР°РїР°Р·РѕРЅ
         String text_19 = "Valya";
         Pattern pattern_19 = Pattern.compile("[Vv]alya");
         Matcher matcher_19 = pattern_19.matcher(text_19);
         System.out.println("matcher_19: " + matcher_19.matches());
 
-        // ^ - начало строки
+        // ^ - РЅР°С‡Р°Р»Рѕ СЃС‚СЂРѕРєРё
         String text_20 = "Valya";
         Pattern pattern_20 = Pattern.compile("^Valya");
         Matcher matcher_20 = pattern_20.matcher(text_20);
         System.out.println("matcher_20: " + matcher_20.matches());
 
-        // $ - конец строки
+        // $ - РєРѕРЅРµС† СЃС‚СЂРѕРєРё
         String text_21 = "Valya";
         Pattern pattern_21 = Pattern.compile("Valya$");
         Matcher matcher_21 = pattern_21.matcher(text_21);
         System.out.println("matcher_21: " + matcher_21.matches());
 
-        // () - группа строки
+        // () - РіСЂСѓРїРїР° СЃС‚СЂРѕРєРё
         String text_22 = "Valya";
-        Pattern pattern_22 = Pattern.compile("(V)(?<code>a)ly\\2"); // \\2 дубликат того что на втором
+        Pattern pattern_22 = Pattern.compile("(V)(?<code>a)ly\\2"); // \\2 РґСѓР±Р»РёРєР°С‚ С‚РѕРіРѕ С‡С‚Рѕ РЅР° РІС‚РѕСЂРѕРј
         Matcher matcher_22 = pattern_22.matcher(text_22);
         while (matcher_22.find()) {
             System.out.println("matcher_22: " + matcher_22.group(1));
@@ -141,7 +141,7 @@ public class Regular {
             System.out.println("matcher_22: " + matcher_22.group(2));
         }
 
-        // замена подстрок
+        // Р·Р°РјРµРЅР° РїРѕРґСЃС‚СЂРѕРє
         String text_23 = "Valya";
         Pattern pattern_23 = Pattern.compile("(V)(a)l(ya)"); //
         Matcher matcher_23 = pattern_23.matcher(text_23);
@@ -151,11 +151,11 @@ public class Regular {
         }
         System.out.println(stringBuilder);
 
-        // замена подстрок
+        // Р·Р°РјРµРЅР° РїРѕРґСЃС‚СЂРѕРє
         String text_24 = "Valya abc Valya";
         String text_25 = "Valya abc Valya";
-        String regexp1 = "(V.+)(.+a)"; //жадный квантификатор
-        String regexp2 = "(V.+?)(.+?ya)"; //не жадный квантификатор
+        String regexp1 = "(V.+)(.+a)"; //Р¶Р°РґРЅС‹Р№ РєРІР°РЅС‚РёС„РёРєР°С‚РѕСЂ
+        String regexp2 = "(V.+?)(.+?ya)"; //РЅРµ Р¶Р°РґРЅС‹Р№ РєРІР°РЅС‚РёС„РёРєР°С‚РѕСЂ
         System.out.println(text_24.replaceAll(regexp1, "$2"));
         System.out.println(text_25.replaceAll(regexp2, "$2"));
 

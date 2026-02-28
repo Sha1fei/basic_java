@@ -10,7 +10,7 @@ public class LinkedHashMaps {
         Person person2 = new Person("Petr", 21, 3);
         Person person3 = new Person("Andrew", 16, 2);
 
-        Map<Integer, Person> linkedHashMap = new LinkedHashMap<>(); // Порядок при итерации по map гарантируется
+        Map<Integer, Person> linkedHashMap = new LinkedHashMap<>(); // РџРѕСЂСЏРґРѕРє РїСЂРё РёС‚РµСЂР°С†РёРё РїРѕ map РіР°СЂР°РЅС‚РёСЂСѓРµС‚СЃСЏ
 
         linkedHashMap.put(person1.getId(), person1);
         linkedHashMap.put(person2.getId(), person2);

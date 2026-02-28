@@ -4,10 +4,10 @@ import java.util.WeakHashMap;
 
 public class WeakHashMaps {
     public static void main(String[] args) {
-        WeakHashMap<Integer, Pet> weakHashMap = new WeakHashMap<>(); // аналог HashMap но харанит объекты до того момента пока на них ктокто ссылется - вроде так
+        WeakHashMap<Integer, Pet> weakHashMap = new WeakHashMap<>(); // Р°РЅР°Р»РѕРі HashMap РЅРѕ С…Р°СЂР°РЅРёС‚ РѕР±СЉРµРєС‚С‹ РґРѕ С‚РѕРіРѕ РјРѕРјРµРЅС‚Р° РїРѕРєР° РЅР° РЅРёС… РєС‚РѕРєС‚Рѕ СЃСЃС‹Р»РµС‚СЃСЏ - РІСЂРѕРґРµ С‚Р°Рє
 
         Pet pet1 = new Pet(1, "Vaska");
-        weakHashMap.put(pet1.getId(), pet1); // см. hashMap
+        weakHashMap.put(pet1.getId(), pet1); // СЃРј. hashMap
         System.out.println(weakHashMap.get(pet1.getId()));
     }
 }

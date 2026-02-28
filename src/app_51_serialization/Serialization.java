@@ -26,7 +26,7 @@ public class Serialization {
 }
 
 class Person implements Serializable {
-    static final long serialVersionUID = 1L; // для того чтобы при зизменении класса не было ошибок с новым uuid
+    static final long serialVersionUID = 1L; // РґР»СЏ С‚РѕРіРѕ С‡С‚РѕР±С‹ РїСЂРё Р·РёР·РјРµРЅРµРЅРёРё РєР»Р°СЃСЃР° РЅРµ Р±С‹Р»Рѕ РѕС€РёР±РѕРє СЃ РЅРѕРІС‹Рј uuid
     private String name;
     private int age;
 
