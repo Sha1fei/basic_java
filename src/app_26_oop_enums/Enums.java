@@ -6,24 +6,28 @@ enum TestEnum_1 {
     Test_A, Test_B, Test_C, Test_D, Test_E;
 }
 
-enum TestEnum_2 implements TestEnums_2_interface { // не стандартное исипользование enum, аналог абстарных классов
+// enum РјРѕР¶РµС‚ СЂРµР°Р»РёР·РѕРІС‹РІР°С‚СЊ РёРЅС‚РµСЂС„РµР№СЃС‹ Рё РїРµСЂРµРѕРїСЂРµРґРµР»СЏС‚СЊ РјРµС‚РѕРґС‹.
+enum TestEnum_2 implements TestEnums_2_interface {
     Test_A("test") {
         @Override
         public void getTest2() {
             System.out.println("run getTest2");
         }
     };
-    private String test;
+    private final String test;
 
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ enum РІСЃРµРіРґР° private (РЅРµСЏРІРЅРѕ).
     TestEnum_2(String test) {
         this.test = test;
     }
 
+    // Р“РµС‚С‚РµСЂ РґР»СЏ РїРѕР»СЏ enum-РєРѕРЅСЃС‚Р°РЅС‚С‹.
     public String getTest() {
         return test;
     }
 
-    @Override // второй вариант перезаписа метода
+    // РњРѕР¶РЅРѕ РїРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ РјРµС‚РѕРґ РЅР° СѓСЂРѕРІРЅРµ enum.
+    @Override
     public void getTest2() {
         System.out.println("run getTest2.1");
     }
@@ -40,8 +44,8 @@ public class Enums {
         System.out.println(TestEnum_1.Test_B.name());
         System.out.println(TestEnum_1.Test_C.toString());
         System.out.println(TestEnum_1.valueOf("Test_D"));
-        System.out.println(Arrays.toString(TestEnum_1.values())); // вывод строкой список всех enums
-        System.out.println(TestEnum_1.Test_E.ordinal()); //вывод порядкого номера
+        System.out.println(Arrays.toString(TestEnum_1.values())); // РјР°СЃСЃРёРІ РІСЃРµС… РєРѕРЅСЃС‚Р°РЅС‚
+        System.out.println(TestEnum_1.Test_E.ordinal()); // РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ (0-based)
 
         System.out.println(TestEnum_2.Test_A.getTest());
         TestEnum_2.Test_A.getTest2();
