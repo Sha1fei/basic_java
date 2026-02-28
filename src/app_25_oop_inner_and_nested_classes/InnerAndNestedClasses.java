@@ -44,7 +44,7 @@ public class InnerAndNestedClasses {
     // Нестатический внутренний класс: имеет доступ к полям внешнего объекта
     class InnerClass {
         void testInner() {
-            System.out.println("run Inner Class: " + InnerAndNestedClasses.this.value);
+            System.out.println("run Inner Class: " + InnerAndNestedClasses.this.value); // обращение к внешнему объекту без его создания
         }
     }
 }
