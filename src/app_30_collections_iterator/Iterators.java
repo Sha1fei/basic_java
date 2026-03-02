@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Iterators {
     public static void main(String[] args) {
-        Iterator<Integer> iterator_1 = new ArrayList<>(List.of(1, 2, 3, 4, 5)).iterator(); // List.of - не изменяемая коллекция (не доступен remove) ArrayList - делает изменяемую коллекцуию
-        Iterator<Integer> iterator_2 = Arrays.asList(1, 2, 3, 4, 5).iterator(); // List.of - не изменяемая коллекция (не доступен remove) Arrays.asList - делает изменяемую коллекцуию
-        Iterator<Integer> iterator_3 = List.of(1, 2, 3, 4, 5).iterator(); // List.of - не изменяемая коллекция (не доступен remove)
+        Iterator<Integer> iterator_1 = new ArrayList<>(List.of(1, 2, 3, 4, 5)).iterator(); // List.of - РЅРµ РёР·РјРµРЅСЏРµРјР°СЏ РєРѕР»Р»РµРєС†РёСЏ (РЅРµ РґРѕСЃС‚СѓРїРµРЅ remove) ArrayList - РґРµР»Р°РµС‚ РёР·РјРµРЅСЏРµРјСѓСЋ РєРѕР»Р»РµРєС†СѓРёСЋ
+        Iterator<Integer> iterator_2 = Arrays.asList(1, 2, 3, 4, 5).iterator(); // List.of - РЅРµ РёР·РјРµРЅСЏРµРјР°СЏ РєРѕР»Р»РµРєС†РёСЏ (РЅРµ РґРѕСЃС‚СѓРїРµРЅ remove) Arrays.asList - РґРµР»Р°РµС‚ РёР·РјРµРЅСЏРµРјСѓСЋ РєРѕР»Р»РµРєС†СѓРёСЋ
+        Iterator<Integer> iterator_3 = List.of(1, 2, 3, 4, 5).iterator(); // List.of - РЅРµ РёР·РјРµРЅСЏРµРјР°СЏ РєРѕР»Р»РµРєС†РёСЏ (РЅРµ РґРѕСЃС‚СѓРїРµРЅ remove)
 
         for (; iterator_1.hasNext(); ) {
             Integer next = iterator_1.next();
