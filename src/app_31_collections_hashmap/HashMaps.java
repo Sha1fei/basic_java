@@ -2,7 +2,6 @@ package app_31_collections_hashmap;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class HashMaps {
     public static void main(String[] args) {
@@ -51,12 +50,34 @@ class Pet {
     }
 
     @Override
-    public boolean equals(Object o) {
-        // equals и hashCode нужны корректной работы объектов в HashMap/HashSet.
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pet pet = (Pet) o;
-        return Objects.equals(id, pet.id) && Objects.equals(name, pet.name);
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Pet other = (Pet) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
     }
 
     @Override
@@ -67,10 +88,7 @@ class Pet {
                 '}';
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
+   
 
     public Integer getId() {
         return id;
