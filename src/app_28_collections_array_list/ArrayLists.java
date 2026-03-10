@@ -16,7 +16,7 @@ public class ArrayLists {
     public static void main(String[] args) {
         // Указываем начальную емкость, чтобы уменьшить количество расширений. Позволяет добавлять дубликатыы
         List<Integer> arrayList = new ArrayList<>(4);
-        arrayList.add(1);    // Амортизированное O(1)
+        arrayList.add(1);    // Амортизированное O(1), tесли выходим за предел O(n)
         arrayList.add(2);
         arrayList.add(3);
 
